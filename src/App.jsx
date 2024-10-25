@@ -1,18 +1,22 @@
-import logo from "/logo.png";
+import { useState } from "react";
+
 import "./App.css";
+import HelloWorld from "./HelloWorld";
+import Clock from "./Clock";
 
 function App() {
+  const [count, setCount] = useState(0);
+
   return (
     <>
-      <div>
-        <img src={logo} className="logo" alt="Rocket logo" />
-      </div>
-      <h1>World Clock</h1>
-      <div className="card">
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
+      <HelloWorld />
+      <button onClick={() => setCount((count) => count + 1)}>
+        count is {count}
+      </button>
+
+      <Clock timeZone="Europe/Paris" />
+      <Clock timeZone="Europe/London" />
+      <Clock timeZone="Singapore" />
     </>
   );
 }
