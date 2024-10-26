@@ -1,5 +1,4 @@
 import { useState } from "react";
-
 import "./App.css";
 import HelloWorld from "./HelloWorld";
 import Clock from "./Clock";
@@ -14,9 +13,11 @@ function App() {
         count is {count}
       </button>
 
-      <Clock timeZone="Europe/Paris" />
-      <Clock timeZone="Europe/London" />
-      <Clock timeZone="Singapore" />
+      <div className="container">
+        <Clock timeZone="Europe/Paris" />
+        <Clock timeZone="Europe/London" />
+        <Clock timeZone="Singapore" />
+      </div>
     </>
   );
 }
